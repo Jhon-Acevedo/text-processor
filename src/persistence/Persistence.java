@@ -3,11 +3,17 @@ package persistence;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * The type Persistence.
+ */
 public class Persistence extends Thread {
     private static final String FILE1 = "file.txt";
 
     private String text;
 
+    /**
+     * Instantiates a new Persistence.
+     */
     public Persistence() {
         start();
     }
@@ -21,6 +27,11 @@ public class Persistence extends Thread {
         }
     }
 
+    /**
+     * Write file.
+     *
+     * @throws IOException the io exception
+     */
     public void writeFile() throws IOException {
         try {
             Thread.sleep(5000);
@@ -32,6 +43,11 @@ public class Persistence extends Thread {
         writer.close();
     }
 
+    /**
+     * Sets text.
+     *
+     * @param text the text
+     */
     public void setText(String text) {
         this.text = text;
     }

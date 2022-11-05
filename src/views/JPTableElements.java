@@ -13,6 +13,9 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 
+/**
+ * The type Jp table elements.
+ */
 public class JPTableElements extends JPanel {
 
     private static final long serialVersionUID = 1L;
@@ -23,18 +26,32 @@ public class JPTableElements extends JPanel {
     private JTable jtElements;
     private JScrollPane jspTable;
 
+    /**
+     * Instantiates a new Jp table elements.
+     */
     public JPTableElements() {
         initComponents();
     }
 
 
+    /**
+     * Gets dtm elements.
+     *
+     * @return the dtm elements
+     */
     public DefaultTableModel getDtmElements() {
         return dtmElements;
     }
 
+    /**
+     * Sets dtm elements.
+     *
+     * @param dtmElements the dtm elements
+     */
     public void setDtmElements(DefaultTableModel dtmElements) {
         this.dtmElements = dtmElements;
     }
+
 
 
     private void initComponents() {
@@ -78,6 +95,11 @@ public class JPTableElements extends JPanel {
     }
 
 
+    /**
+     * Refresh.
+     *
+     * @param vector the vector
+     */
     public void refresh(Object[][] vector) {
         cleanRowsTable();
         for (int i = 0; i < vector.length; i++) {
@@ -87,11 +109,19 @@ public class JPTableElements extends JPanel {
         }
     }
 
+    /**
+     * Add element to table.
+     *
+     * @param vector the vector
+     */
     public void addElementToTable(Object[] vector) {
         dtmElements.addRow(vector);
         centerTextInCell();
     }
 
+    /**
+     * Clean rows table.
+     */
     public void cleanRowsTable() {
         dtmElements.setNumRows(0);
     }

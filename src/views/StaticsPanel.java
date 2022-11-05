@@ -5,6 +5,9 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+/**
+ * The type Statics panel.
+ */
 public class StaticsPanel extends JPanel {
     private int numberWords;
     private JLabel jlNumberWords;
@@ -14,6 +17,11 @@ public class StaticsPanel extends JPanel {
     private JPTableElements jpTableElements;
 
 
+    /**
+     * Instantiates a new Statics panel.
+     *
+     * @param listener the listener
+     */
     public StaticsPanel(ActionListener listener) {
 
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -46,17 +54,32 @@ public class StaticsPanel extends JPanel {
         add(jpTableElements);
     }
 
+    /**
+     * Sets number words.
+     *
+     * @param numberWords the number words
+     * @param numberLines the number lines
+     */
     public void setNumberWords(int numberWords, int numberLines) {
         jlNumberWords.setText("Numero de Palabras Usadas: " + numberWords);
         jlNumberLines.setText("Numero de Lineas: " + numberLines);
     }
 
+    /**
+     * Sets number letters.
+     *
+     * @param numberLetters the number letters
+     */
     public void setNumberLetters(int numberLetters) {
         jlNumberLetters.setText("Numero de letras: " + numberLetters);
     }
 
 
-
+    /**
+     * Show matrix.
+     *
+     * @param matrix the matrix
+     */
     public void showMatrix(Object[][] matrix) {
         jpTableElements.refresh(matrix);
     }

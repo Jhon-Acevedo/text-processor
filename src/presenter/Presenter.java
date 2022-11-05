@@ -9,14 +9,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 
+/**
+ * The type Presenter.
+ */
 public class Presenter implements ActionListener {
-    private MainFrame mainFrame;
-    private Persistence persistence;
-    private controlText controlText;
-    private Timer threadPaint;
+    private MainFrame mainFrame; //View
+    private Persistence persistence; //Persistence
+    private controlText controlText; //Models
+    private Timer threadPaint; //Threads
 
     private String text = "";
 
+    /**
+     * Instantiates a new Presenter.
+     */
     public Presenter() {
         mainFrame = new MainFrame(this);
         controlText = new controlText();
@@ -24,6 +30,9 @@ public class Presenter implements ActionListener {
         startThreadWrite();
     }
 
+    /**
+     * Start thread write.
+     */
     public void startThreadWrite() {
         threadPaint = new Timer(500, e -> {
             text = mainFrame.getTextArea();
@@ -54,6 +63,9 @@ public class Presenter implements ActionListener {
 
     }
 
+    /**
+     * Filechooser.
+     */
     public void filechooser() {
         JFileChooser fileChooser = new JFileChooser();
 //        guardar en una ruta especifica
